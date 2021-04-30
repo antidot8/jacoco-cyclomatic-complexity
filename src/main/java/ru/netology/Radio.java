@@ -4,11 +4,8 @@ public class Radio {
     private int currentStation = 0;
     private int maxStation = 9;
     private int minStation = 0;
-    private int maxVolume = 10;
-    private int minVolume = 0;
-    private int currentVolume = 0;
 
-    public void setNextStation(int currentStation) {
+    public void setNextStation() {
         if (currentStation >= maxStation) {
             this.currentStation = minStation;
             return;
@@ -16,7 +13,7 @@ public class Radio {
         this.currentStation = currentStation + 1;
     }
 
-    public void setPrevStation(int currentStation) {
+    public void setPrevStation() {
         if (currentStation <= minStation) {
             this.currentStation = maxStation;
             return;

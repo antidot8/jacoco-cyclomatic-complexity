@@ -9,26 +9,25 @@ class RadioTest {
     Radio radio = new Radio();
 
     @Test
-    public void NextStationAboveLimit() {
-        radio.setNextStation(9);
+    public void NextStationPositiveAndAboveLimit() {
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
+        radio.setNextStation();
         assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
-    public void PrevStationUnderLimit() {
-        radio.setPrevStation(0);
-        assertEquals(9, radio.getCurrentStation());
+    public void PrevStationPositiveAndUnderLimit() {
+        radio.setPrevStation();
+        radio.setPrevStation();
+        assertEquals(8, radio.getCurrentStation());
     }
 
-    @Test
-    public void NextStationPositiveLimit() {
-        radio.setNextStation(5);
-        assertEquals(6, radio.getCurrentStation());
-    }
-
-    @Test
-    public void PrevStationPositiveLimit() {
-        radio.setPrevStation(5);
-        assertEquals(4, radio.getCurrentStation());
-    }
 }
